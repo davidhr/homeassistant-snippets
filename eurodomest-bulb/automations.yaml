@@ -1,0 +1,49 @@
+- alias: Bureau Light - Adjust Brightness
+  trigger:
+    platform: state
+    entity_id: input_number.bureau_brightness
+  action:
+    - service: script.bureau_bulb_brightness
+      data_template:
+        brightness: "{{ trigger.to_state.state | int }}"
+
+- alias: Bureau Ambiance
+  trigger:
+    platform: state
+    entity_id: input_select.bulb_color
+  action:
+    - service: script.bureau_bulb_setcolor
+      data_template:
+        color: >
+          {% if trigger.to_state.state == 'red' %}
+            "red"
+          {%-elif trigger.to_state.state == 'blue' %}
+            "blue"
+          {%-elif trigger.to_state.state == 'aqua' %}
+            "aqua"
+          {%-elif trigger.to_state.state == 'yellow' %}
+            "yellow"
+          {%-elif trigger.to_state.state == 'fuchsia' %}
+            "fuchsia"
+          {%-elif trigger.to_state.state == 'gray' %}
+            "gray"
+          {%-elif trigger.to_state.state == 'green' %}
+            "green"
+          {%-elif trigger.to_state.state == 'lime' %}
+            "lime"
+          {%-elif trigger.to_state.state == 'maroon' %}
+            "maroon"
+          {%-elif trigger.to_state.state == 'navy' %}
+            "navy"
+          {%-elif trigger.to_state.state == 'olive' %}
+            "olive"
+          {%-elif trigger.to_state.state == 'purple' %}
+            "purple"
+          {%-elif trigger.to_state.state == 'silver' %}
+            "silver" 
+          {%-elif trigger.to_state.state == 'teal' %}
+            "teal"
+          {%-elif trigger.to_state.state == 'white' %}
+            "white"   
+          {% endif %}
+          

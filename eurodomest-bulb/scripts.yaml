@@ -1,0 +1,26 @@
+bureau_bulb_setcolor:
+  sequence:
+    - service: shell_command.bulb_set_color
+      data_template:
+        mac: "fc:58:fa:c1:80:94"
+        color: "{{ color }}"
+
+bureau_bulb_off:
+  sequence:
+    - service: shell_command.bulb_off
+      data_template:
+        mac: "fc:58:fa:c1:80:94"
+
+bureau_bulb_on:
+  sequence:
+    - service: shell_command.bulb_on
+      data_template:
+        mac: "fc:58:fa:c1:80:94"
+
+bureau_bulb_brightness:
+  sequence:
+    - service: shell_command.bulb_brightness
+      data_template:
+        mac: "fc:58:fa:c1:80:94"
+        brightness: "{{ brightness }}"
+        

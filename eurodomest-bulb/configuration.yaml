@@ -1,0 +1,47 @@
+#...
+
+switch:
+  - platform: command_line
+    switches:
+      office_bulb:
+        friendly_name: Bulb RGB
+        command_on: "/home/davidh/domotique/bulb/blebulb.sh fc:58:fa:c1:80:94 -s 20"
+        command_off: "/home/davidh/domotique/bulb/blebulb.sh fc:58:fa:c1:80:94 -s 0"
+      
+shell_command:
+    bulb_off: sudo bash /home/davidh/domotique/bulb/blebulb.sh {{mac}} -s 0
+    bulb_on: sudo bash /home/davidh/domotique/bulb/blebulb.sh {{mac}} -s 255
+    bulb_set_color: /home/davidh/domotique/bulb/blebulb.sh {{mac}} -c {{color}}
+    bulb_brightness: /home/davidh/domotique/bulb/blebulb.sh {{mac}} -s {{brightness}}
+
+input_number:
+  bureau_brightness:
+    name: Luminosité (W)
+    initial: 100
+    min: 0
+    max: 254
+    step: 10
+
+input_select:
+  bulb_color:
+    name: Couleur
+    options:
+      - aqua
+      - blue
+      - fuchsia
+      - gray
+      - green
+      - lime
+      - maroon
+      - navy
+      - olive
+      - purple
+      - red
+      - silver
+      - teal
+      - white
+      - yellow
+    initial: white
+    icon: mdi:lava-lamp
+
+#...
