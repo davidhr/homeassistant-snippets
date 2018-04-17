@@ -6,4 +6,5 @@ Quelques config et scripts que j'utilise dans Home Assistant https://www.home-as
 Configuration pour l'utilisation des ampoules Bluetooth RGB Eurodomest à moins de 10 EUR.
 Le script de base se trouve ici: https://github.com/gregnau/eurodomest-rgb-blebulb
 Pour pouvoir utiliser plusieurs ampoules, j'ai modifié le script pour que le premier argument soit l'adresse MAC de l'ampoule.
+Demo: https://www.youtube.com/watch?v=DKjEZZ8khOc
 
